@@ -16,6 +16,10 @@ public class Monster {
 	private int intelligence = 10;
 	private int wis = 10;
 	private int cha = 10;
+	private int initiative;
+	private int fortitude;
+	private int reflex;
+	private int will;
 	private String name;
 	public Monster() {
 		//do nothing, this is so everything compiles when MonsterMain is compiled.
@@ -104,6 +108,38 @@ public class Monster {
 
 	public void setCha(int cha) {
 		this.cha = cha;
+	}
+
+	public int getInitiative() {
+		return initiative;
+	}
+
+	public void setInitiative(int initiative) {
+		this.initiative = initiative;
+	}
+
+	public int getFortitude() {
+		return fortitude;
+	}
+
+	public void setFortitude(int fortitude) {
+		this.fortitude = fortitude;
+	}
+
+	public int getReflex() {
+		return reflex;
+	}
+
+	public void setReflex(int reflex) {
+		this.reflex = reflex;
+	}
+
+	public int getWill() {
+		return will;
+	}
+
+	public void setWill(int will) {
+		this.will = will;
 	}
 
 }
