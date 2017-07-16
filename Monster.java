@@ -10,6 +10,12 @@
 public class Monster {
 	private int hp;
 	private int ac;
+	private int str = 10;
+	private int dex = 10;
+	private int con = 10;
+	private int intelligence = 10;
+	private int wis = 10;
+	private int cha = 10;
 	private String name;
 	public Monster() {
 		//do nothing, this is so everything compiles when MonsterMain is compiled.
@@ -52,5 +58,52 @@ public class Monster {
 		this.hp = hp;
 	}
 
+	public int getStr() {
+		return str;
+	}
+
+	public void setStr(int str) {
+		this.str = str;
+	}
+
+	public int getDex() {
+		return dex;
+	}
+
+	public void setDex(int dex) {
+		this.dex = dex;
+	}
+
+	public int getCon() {
+		return con;
+	}
+
+	public void setCon(int con) {
+		this.con = con;
+	}
+
+	public int getInt() {
+		return intelligence;
+	}
+
+	public void setInt(int intelligence) {
+		this.intelligence = intelligence;
+	}
+
+	public int getWis() {
+		return wis;
+	}
+
+	public void setWis(int wis) {
+		this.wis = wis;
+	}
+
+	public int getCha() {
+		return cha;
+	}
+
+	public void setCha(int cha) {
+		this.cha = cha;
+	}
 
 }
