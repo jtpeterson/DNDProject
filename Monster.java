@@ -8,8 +8,10 @@
 */
 
 public class Monster {
+	private MonsterSize size;
 	private int hp;
 	private int ac;
+	private int speed;
 	private int str = 10;
 	private int dex = 10;
 	private int con = 10;
@@ -140,6 +142,14 @@ public class Monster {
 
 	public void setWill(int will) {
 		this.will = will;
+	}
+
+	public int getSpeed() {
+		return speed;
+	}
+
+	public void setSpeed(int speed) {
+		this.speed = speed;
 	}
 
 }
