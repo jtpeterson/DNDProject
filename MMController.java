@@ -1,6 +1,8 @@
 import java.util.*;
 
 /* TODO List
+* Implement Size Templates
+* List Monsters by size
 * Implement Monster Searching
 * Implement Monster Template Searching
 * Implement Class Template Searching
@@ -52,6 +54,7 @@ public class MMController {
 			System.out.println("1) Find a Monster.");
 			System.out.println("2) Find a Monster Template.");
 			System.out.println("3) Find a Class Template.");
+			System.out.println("4) Find a Size Template. Not Implemented...");
 			System.out.println("Please Enter a Command.");
 			String command = scan.nextLine();
 			if (command.equalsIgnoreCase("quit") || command.equalsIgnoreCase("q")) {
@@ -95,6 +98,7 @@ public class MMController {
 		while(search) {
 			System.out.println("");
 			System.out.println("1) Print out a list of available monsters.");
+			System.out.println("2) Print Monsters by Size");
 			System.out.println("");
 			System.out.println("Please enter the name of the monster you are looking for.");
 			String command = scan.nextLine();
@@ -119,6 +123,9 @@ public class MMController {
 				System.out.println("return - returns to main menu.");
 				System.out.println("1 - Lists the monsters in the database.");
 				System.out.println("");
+			} else if (command.equalsIgnoreCase("2")) {
+				System.out.println("Printing Monsters by size...");
+				//TODO with a 2D list 
 			}
 			else {
 				System.out.println("Searching Monsters...");
@@ -147,6 +154,7 @@ public class MMController {
 			System.out.println("2) Apply a Class Template");
 			System.out.println("3) Slightly randomize stats");
 			System.out.println("4) Tweak Stats");
+			System.out.println("5) Change Size of Monster");
 			System.out.println("");
 			String command = scan.nextLine();
 			if (command.equalsIgnoreCase("return")) {
@@ -163,7 +171,7 @@ public class MMController {
 				System.out.println("Current Working Commands: ");
 				System.out.println("quit/q - quits the program");
 				System.out.println("return - returns to main menu.");
-				System.out.println("1-4 - Key commands to adjust the monster. Changes in this form will not alter the original monster.");
+				System.out.println("1-5 - Key commands to adjust the monster. Changes in this form will not alter the original monster.");
 				System.out.println("Just the users view of it.");
 				System.out.println("");
 			} else if (command.equalsIgnoreCase("1")) {
@@ -179,6 +187,9 @@ public class MMController {
 			} else if (command.equalsIgnoreCase("4")) {
 				System.out.println("Allowing for stat tweaking...");
 				cont = this.tweakStats(monster);
+			} else if (command.equalsIgnoreCase("5")) {
+				System.out.println("Changing Monster Size...");
+				cont = this.changeSize(monster);
 			}
 			else {
 				//TODO
@@ -210,6 +221,13 @@ public class MMController {
 	}
 
 	public boolean tweakStats(Monster monster) {
+		//TODO
+		System.out.println("Not yet implemented.");
+		System.out.println("Closing Database");
+		return false;
+	}
+
+	public boolean changeSize(Monster monster) {
 		//TODO
 		System.out.println("Not yet implemented.");
 		System.out.println("Closing Database");
