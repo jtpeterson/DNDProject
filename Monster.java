@@ -1,3 +1,4 @@
+import java.util.*;
 /* TODO list
 * Implement every type of stat
 * Determine base skill ranks of a creature
@@ -23,6 +24,10 @@ public class Monster {
 	private int reflex;
 	private int will;
 	private String name;
+	private int baseAttack;
+	private int grapple;
+	Hashtable<String, Integer> abilities = new Hashtable<String, Integer>();
+	ArrayList<String> feats = new ArrayList();
 	public Monster() {
 		//do nothing, this is so everything compiles when MonsterMain is compiled.
 	}
@@ -152,4 +157,19 @@ public class Monster {
 		this.speed = speed;
 	}
 
+	public int getBaseAttack() {
+		return baseAttack;
+	}
+
+	public void setBaseAttack(int baseAttack) {
+		this.baseAttack = baseAttack;
+	}
+
+	public int getGrapple() {
+		return grapple;
+	}
+
+	public void setGrapple(int grapple) {
+		this.grapple = grapple;
+	}
 }
