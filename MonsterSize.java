@@ -60,7 +60,7 @@ public enum MonsterSize {
         case 10:
         	return (0);
         default:
-            return ("hacker");
+            return (0);
     	}
 	}
 
@@ -87,7 +87,7 @@ public enum MonsterSize {
         case 10:
         	return (32);
         default:
-            return ("hacker");
+            return (0);
     	}
     }
 
@@ -114,7 +114,7 @@ public enum MonsterSize {
         case 10:
         	return (0);
         default:
-            return ("hacker");
+            return (0);
     	}
     }
 }
