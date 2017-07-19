@@ -26,6 +26,9 @@ public class Monster {
 	private String name;
 	private int baseAttack;
 	private int grapple;
+	private String environment;
+	private int cr;
+	private String alignment;
 	Hashtable<String, Integer> abilities = new Hashtable<String, Integer>();
 	ArrayList<String> feats = new ArrayList();
 	public Monster() {
@@ -172,4 +175,30 @@ public class Monster {
 	public void setGrapple(int grapple) {
 		this.grapple = grapple;
 	}
+
+	public String getEnvironment() {
+		return environment;
+	}
+
+	public void setEnvironment(String environment) {
+		this.environment = environment;
+	}
+
+	public int getCR() {
+		return cr;
+	}
+
+	public void setCR(int cr) {
+		this.cr = cr;
+	}
+
+	public String getAlignment() {
+		return alignment;
+	}
+
+	public void setAlignment(String alignment) {
+		this.alignment = alignment;
+	}
+
+
 }
