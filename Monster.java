@@ -29,7 +29,11 @@ public class Monster {
 	private String environment;
 	private int cr;
 	private String alignment;
+	private String spellLikeAbilities;
 	Hashtable<String, Integer> abilities = new Hashtable<String, Integer>();
+	Hashtable<String, String> specialAbilities = new Hashtable<String, String>();
+	//specialAbilities.keys() for list of abilities,
+	//specialAbilities.valueOf(key) for description of abilities
 	ArrayList<String> feats = new ArrayList();
 	public Monster() {
 		//do nothing, this is so everything compiles when MonsterMain is compiled.
@@ -200,5 +204,27 @@ public class Monster {
 		this.alignment = alignment;
 	}
 
+	public String getSpellLikeAbilities() {
+		return spellLikeAbilities;
+	}
 
+	public void setSpellLikeAbilities(String spellLikeAbilities) {
+		this.spellLikeAbilities = spellLikeAbilities;
+	}
+
+	public Hashtable<String, Integer> getAbilities() {
+		return abilities;
+	}
+
+	public void setAbilities(Hashtable<String, Integer> abilities) {
+		this.abilities = abilities;
+	}
+
+	public Hashtable<String, String> getSpecialAbilities() {
+		return specialAbilities;
+	}
+
+	public void setSpecialAbilities(Hashtable<String, String> specialAbilities) {
+		this.specialAbilities = specialAbilities;
+	}
 }
