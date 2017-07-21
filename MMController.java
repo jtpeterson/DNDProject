@@ -274,6 +274,8 @@ public class MMController {
 					if (input + monster.getSize().getValue() < 1) {
 						input = 9 - monster.getSize().getValue();
 					}
+					int updatedSize = monster.getSize().getValue() + input;
+					monster.setSize(monster.getSize().fromInt(updatedSize));
 					input = Math.abs(input);
 					System.out.println("Decreasing size of monster by " + input + " steps...");
 				} else {
