@@ -9,6 +9,7 @@ import java.util.*;
 * Implement Applying a monster template to a monster
 * Implement Applying a class template to a monster
 * Implement Adding a new monster
+* Implement Adding a feat to a monster
 * Implement Removing a monster
 * Implement Creating the MonsterManual from a file
 * Implement Writing to a file for persistence
@@ -17,18 +18,19 @@ import java.util.*;
 * Implement a UI via Javafx
 * Create an .exe to run the program
 
+
 */
 public class MMController {
 	Scanner scan = new Scanner(System.in);
 	List<Monster> monsterList = new ArrayList<Monster>();
-	Monster zombie = new Monster("zombie", 12, 10);
+	Monster zombie = new Monster("zombie", 12, 10, MonsterSize.MEDIUM);
 	Hashtable<String, Monster> monsterManual = new Hashtable<String, Monster>();
 
 	//Used for debug purposes
 	private String control;
 
 	public MMController() {
-		control = "";	
+		control = "";
 	}
 	public MMController(String control) {
 		this.control = control;
@@ -229,8 +231,59 @@ public class MMController {
 
 	public boolean changeSize(Monster monster) {
 		//TODO
-		System.out.println("Not yet implemented.");
-		System.out.println("Closing Database");
+		this.setcontrol("Monster Search");
+		boolean search = true;
+		while(search) { 
+			System.out.println("");
+			System.out.println("Enter the number of size categories you would like to increase/decrease.");
+			System.out.println("A negative number will lower the size, a positive number will increase the size.");
+			System.out.println("");
+			String command = scan.nextLine();
+			if (command.equalsIgnoreCase("return")) {
+				System.out.println("");
+				System.out.println("Returning to Monster...");
+				System.out.println("");
+				search = false;
+				return true;
+			} else if (command.equalsIgnoreCase("quit") || command.equalsIgnoreCase("q")) {
+				search = false;
+				return false;
+			} else if (command.equalsIgnoreCase("help")) {
+				System.out.println("");
+				System.out.println("Current Working Commands: ");
+				System.out.println("quit/q - quits the program");
+				System.out.println("return - returns to main menu.");
+				System.out.println("-9-0/1-9 Number of steps up or down for the size category. Size category will not go above 10 or below 1.");
+				System.out.println("");
+			} else {
+				try {
+					int input = Integer.parseInt(command);
+				} catch(NumberFormatException e) {
+					System.out.println("");
+					System.out.println("Invalid command. Type \"help\" for a list of valid commands"); 
+				}
+				int input = Integer.parseInt(command);
+				if (input > 0) {
+					if (input + monster.getSize().getValue() > 10) {
+						input = 10 - monster.getSize().getValue();
+					}
+					System.out.println("Increasing size of monster by " + input + " steps...");
+					int updatedSize = monster.getSize().getValue() + input;
+					monster.setSize(monster.getSize().fromInt(updatedSize));
+				} else if (input < 0) {
+					if (input + monster.getSize().getValue() < 1) {
+						input = 9 - monster.getSize().getValue();
+					}
+					input = Math.abs(input);
+					System.out.println("Decreasing size of monster by " + input + " steps...");
+				} else {
+					System.out.println("Not changing monster size at all. Returning to Monster...");
+				}
+				return true;
+				
+			}
+
+		}
 		return false;
 	}
 

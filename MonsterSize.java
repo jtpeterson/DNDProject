@@ -1,6 +1,6 @@
 public enum MonsterSize {
 	FINE(1), DIMINUTIVE(2), TINY(3), SMALL(4), MEDIUM(5), LARGE(6), HUGE(7), GARGANTUAN(8), COLOSSAL(9), COLOSSALPLUS(10);
-	private final int size;
+	private int size;
 
 	MonsterSize(int size) {
 		this.size = size;
@@ -9,6 +9,15 @@ public enum MonsterSize {
 	public int getValue() {
 		return size;
 	}
+
+	public static MonsterSize fromInt(int i) {
+        for (MonsterSize l: MonsterSize.values()) {
+            if (l.getValue() == i) {
+                return l;
+            }
+        }
+        return null;
+    }
 
 	public String toString() {
         switch (size) {

@@ -38,18 +38,27 @@ public class Monster {
 	public Monster() {
 		//do nothing, this is so everything compiles when MonsterMain is compiled.
 	}
-	public Monster(String name, int hp, int ac) {
+	public Monster(String name, int hp, int ac, MonsterSize size) {
 		this.name = name.toLowerCase();
 		this.hp = hp;
 		this.ac = ac;
+		this.size = size;
 	}
 	public String toString() {
 		//System.out.printf("Name: \n" + name);
 		//System.out.println("hp: " + hp);
 		//System.out.println("ac: " + ac);
-		String builder = "Name: " + name.toUpperCase() + "\nHP: " + hp + "\nAC: " + ac;
+		String builder = "Size: " + size + "\nName: " + name.toUpperCase() + "\nHP: " + hp + "\nAC: " + ac;
 		//System.out.println(builder);
 		return builder;
+	}
+
+	public MonsterSize getSize() {
+		return size;
+	}
+
+	public void setSize(MonsterSize size) {
+		this.size = size;
 	}
 
 	public String getName() {
@@ -227,4 +236,10 @@ public class Monster {
 	public void setSpecialAbilities(Hashtable<String, String> specialAbilities) {
 		this.specialAbilities = specialAbilities;
 	}
+
+	public ArrayList<String> getFeats() {
+		return feats;
+	}
+
+
 }
