@@ -27,9 +27,15 @@ public class Monster {
 	private int baseAttack;
 	private int grapple;
 	private String environment;
+	private String organization;
 	private int cr;
 	private String alignment;
 	private String spellLikeAbilities;
+	private String treasure;
+	private String advancement;
+	private int adjustment;
+	public String description;
+	public String tactics;
 	Hashtable<String, Integer> abilities = new Hashtable<String, Integer>();
 	Hashtable<String, String> specialAbilities = new Hashtable<String, String>();
 	//specialAbilities.keys() for list of abilities,
@@ -239,6 +245,54 @@ public class Monster {
 
 	public ArrayList<String> getFeats() {
 		return feats;
+	}
+
+	public String getOrganization() {
+		return organization;
+	}
+
+	public void setOrganization(String organization) {
+		this.organization = organization;
+	}
+
+	public String getTreasure() {
+		return treasure;
+	}
+
+	public void setTreasure(String treasure) {
+		this.treasure = treasure;
+	}
+
+	public String getAdvancement() {
+		return advancement;
+	}
+
+	public void setAdvancement(String advancement) {
+		this.advancement = advancement;
+	}
+
+	public int getLevelAdjustment() {
+		return adjustment;
+	}
+
+	public void setLevelAdjustment(int adjustment) {
+		this.adjustment = adjustment;
+	}
+
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
+	}
+
+	public String getTactics() {
+		return tactics;
+	}
+
+	public void setTactics(String tactics) {
+		this.tactics = tactics;
 	}
 
 
