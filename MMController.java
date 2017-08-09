@@ -1,7 +1,9 @@
 import java.util.*;
+import java.io.*;
 
 /* TODO List
 * Implement Size Templates
+* Implement Weapon Templates
 * List Monsters by size
 * Implement Monster Searching
 * Implement Monster Template Searching
@@ -21,6 +23,7 @@ import java.util.*;
 
 */
 public class MMController {
+	
 	Scanner scan = new Scanner(System.in);
 	List<Monster> monsterList = new ArrayList<Monster>();
 	Monster zombie = new Monster("zombie", 12, 10, MonsterSize.MEDIUM);

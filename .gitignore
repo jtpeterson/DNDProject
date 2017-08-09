@@ -1,6 +1,7 @@
 *.class
 .gradle
 /build/
+monsters.txt
 
 
 # Ignore Gradle GUI config
