@@ -17,9 +17,6 @@ public class MonsterMain {
 	     if (fvar){
 	          System.out.println("File has been created successfully");
 	     }
-	     else{
-	          System.out.println("File already present at the specified location");
-	     }
     	} catch (IOException e) {
     		System.out.println("Exception Occurred:");
 	        e.printStackTrace();
