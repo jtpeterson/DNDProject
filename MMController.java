@@ -31,12 +31,13 @@ public class MMController {
 
 	//Used for debug purposes
 	private String control;
+	private ArrayList<Monster> monsters;
 
 	public MMController() {
 		control = "";
 	}
-	public MMController(String control) {
-		this.control = control;
+	public MMController(ArrayList<Monster> monsters) {
+		this.monsters = monsters;
 	}
 
 	public void setcontrol(String s) {

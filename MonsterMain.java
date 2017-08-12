@@ -21,7 +21,8 @@ public class MonsterMain {
     		System.out.println("Exception Occurred:");
 	        e.printStackTrace();
 	  }
-	  MMController controller = new MMController();
+	  ArrayList<Monster> monsters = new ArrayList();
+	  MMController controller = new MMController(monsters);
 
 
 		//for compilation purposes, can be removed in final version, maybe. no promises
