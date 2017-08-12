@@ -239,7 +239,7 @@ public class MMController {
 
 	public boolean changeSize(Monster monster) {
 		//TODO
-		this.setcontrol("Monster Search");
+		this.setcontrol("Size change");
 		boolean search = true;
 		while(search) { 
 			System.out.println("");
