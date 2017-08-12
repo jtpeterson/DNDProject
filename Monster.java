@@ -50,6 +50,40 @@ public class Monster {
 		this.ac = ac;
 		this.size = size;
 	}
+	public Monster(MonsterSize size, int hp, int ac, int str, int dex, int con, int intelligence, int wis, int cha, int initiative, int fortitude,
+		int reflex, int will, String name, int baseAttack, int grapple, String environment, String organization, int cr, String alignment,
+		String spellLikeAbilities, String treasure, String advancement, int adjustment, String description, String tactics,
+		Hashtable<String, Integer> abilities, Hashtable<String, String> specialAbilities, ArrayList<String> feats) {
+		this.size = size;
+		this.hp = hp;
+		this.ac = ac;
+		this.str = str;
+		this.dex = dex;
+		this.con = con;
+		this.intelligence = intelligence;
+		this.wis = wis;
+		this.cha = cha;
+		this.initiative = initiative;
+		this.fortitude = fortitude;
+		this.reflex = reflex;
+		this.will = will;
+		this.name = name;
+		this.baseAttack = baseAttack;
+		this.grapple = grapple;
+		this.environment = environment;
+		this.organization = organization;
+		this.cr = cr;
+		this.alignment = alignment;
+		this.spellLikeAbilities = spellLikeAbilities;
+		this.treasure = treasure;
+		this.advancement = advancement;
+		this.adjustment = adjustment;
+		this.description = description;
+		this.tactics = tactics;
+		this.abilities = abilities;
+		this.specialAbilities = specialAbilities;
+		this.feats = feats;
+	}
 	public String toString() {
 		//System.out.printf("Name: \n" + name);
 		//System.out.println("hp: " + hp);
