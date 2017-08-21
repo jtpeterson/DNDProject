@@ -1,6 +1,7 @@
 import java.util.*;
 /* TODO list
-* Implement every type of stat
+* toString is missing: attack, full attack, space, reach, special attacks, special qualitites, skills
+* Implement attack, full attack, space, reach
 * Determine base skill ranks of a creature
 * Determine new skill ranks of a creature if main 6 stats are adjusted
 * Getters and Setters for every type of stat (ugh) This will be necessary for templates to work without overwriting the OG monster
@@ -10,6 +11,7 @@ import java.util.*;
 
 public class Monster {
 	private MonsterSize size;
+	private String type;
 	private int hp;
 	private int ac;
 	private int speed;
@@ -52,8 +54,8 @@ public class Monster {
 	}
 	public Monster(MonsterSize size, int hp, int ac, int str, int dex, int con, int intelligence, int wis, int cha, int initiative, int fortitude,
 		int reflex, int will, String name, int baseAttack, int grapple, String environment, String organization, int cr, String alignment,
-		String spellLikeAbilities, String treasure, String advancement, int adjustment, String description, String tactics,
-		Hashtable<String, Integer> abilities, Hashtable<String, String> specialAbilities, ArrayList<String> feats) {
+		String spellLikeAbilities, String treasure, String advancement, int adjustment, String description, String tactics, 
+		Hashtable<String, String> specialAbilities, ArrayList<String> feats, String type) {
 		this.size = size;
 		this.hp = hp;
 		this.ac = ac;
@@ -80,17 +82,35 @@ public class Monster {
 		this.adjustment = adjustment;
 		this.description = description;
 		this.tactics = tactics;
-		this.abilities = abilities;
 		this.specialAbilities = specialAbilities;
 		this.feats = feats;
+		this.type = type;
 	}
 	public String toString() {
 		//System.out.printf("Name: \n" + name);
 		//System.out.println("hp: " + hp);
 		//System.out.println("ac: " + ac);
-		String builder = "Size: " + size + "\nName: " + name.toUpperCase() + "\nHP: " + hp + "\nAC: " + ac;
+		String builder = "Name: " + name.toUpperCase();
+		builder = builder + "\nSize/Type: " + size + " " + type + "\nHP: " + hp;
+		builder = builder + "\nInitiative: " + initiative + "\nSpeed: " + speed + "\nAC: " + ac;
+		builder = builder + "\nBase Attack/Grapple: " + baseAttack + "/" + grapple;
+		builder = builder + "\nSaves: Fort " + fortitude + " Ref " + reflex + " Will " + will;
+		builder = builder + "\nAbilities: Str " + str + ", Dex " + dex + ", Con " + con + ", Int " + intelligence + ", Wis " + wis + ", Cha " + cha;
+		builder = builder + "\nFeats: " + feats + "\nEnvironment: " + environment;
+		builder = builder + "\nOrganization: " + organization + "\nChallenge Rating: " + cr;
+		builder = builder + "\nTreasure: " + treasure + "\nAlignment: " + alignment;
+		builder = builder + "\nAdvancement: " + advancement + "\nLevel Adjustment: " + adjustment;
+		builder = builder + "\n" + description + "\nCOMBAT\n" + tactics;
 		//System.out.println(builder);
 		return builder;
+	}
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType() {
+		this.type = type;
 	}
 
 	public MonsterSize getSize() {
@@ -259,14 +279,6 @@ public class Monster {
 
 	public void setSpellLikeAbilities(String spellLikeAbilities) {
 		this.spellLikeAbilities = spellLikeAbilities;
-	}
-
-	public Hashtable<String, Integer> getAbilities() {
-		return abilities;
-	}
-
-	public void setAbilities(Hashtable<String, Integer> abilities) {
-		this.abilities = abilities;
 	}
 
 	public Hashtable<String, String> getSpecialAbilities() {
