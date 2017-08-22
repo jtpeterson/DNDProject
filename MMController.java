@@ -26,7 +26,9 @@ public class MMController {
 	
 	Scanner scan = new Scanner(System.in);
 	List<Monster> monsterList = new ArrayList<Monster>();
-	Monster zombie = new Monster("zombie", 12, 10, MonsterSize.MEDIUM);
+	Hashtable<String, String> testDevilSpecAbils = new Hashtable<String, String>();
+	ArrayList<String> testDevilFeats = new ArrayList<String>();
+	Monster beardedDevil = new Monster(MonsterSize.MEDIUM, 45, 19, 15, 15, 17, 6, 10, 10, 6, 8, 7, 5, "Bearded Devil", 6, 8, "A lawful evil-aligned plane", "Solitary, pair, team (3-5), or squad (6-10)", 5, "Always lawful evil", "At will— greater teleport (self plus 50 pounds of objects only). Caster level 12th.", "Standard", "	7–9 HD (Medium); 10–18 HD (Large)", 6, "Every bearded devil carries a sawtoothed glaive. A bearded devil stands 6 feet tall and weighs about 225 pounds.", "Bearded devils are aggressive and love to fight. They revel in their battle frenzy, spreading mayhem among their foes. A bearded devil’s natural weapons, as well as any weapons it wields, are treated as evil-aligned and lawful-aligned for the purpose of overcoming damage reduction.", testDevilSpecAbils, testDevilFeats, "Outsider (Devil, Extraplanar, Evil, Lawful)");
 	Hashtable<String, Monster> monsterManual = new Hashtable<String, Monster>();
 
 	//Used for debug purposes
@@ -50,8 +52,8 @@ public class MMController {
 
 	public void mainInferface() {
 		this.setcontrol("Main");
-		monsterManual.put(zombie.getName(), zombie);
-		monsterList.add(zombie);
+		monsterManual.put(beardedDevil.getName(), beardedDevil);
+		monsterList.add(beardedDevil);
 		//System.out.println(monsterManual.toString());
 		System.out.println("Initializing Monster Database...");
 		boolean cont = true;
@@ -122,8 +124,11 @@ public class MMController {
 				return false;
 			} else if (command.equalsIgnoreCase("1")) {
 				System.out.println("");
-				for (Monster monster: monsterList) {
-					System.out.print(monster.getName().toUpperCase() + " ");
+				//for (Monster monster: monsterList) {
+				//	System.out.print(monster.getName().toUpperCase() + " ");
+				//}
+				for(Object key: monsterManual.keySet().toArray()) {
+					System.out.println(key);
 				}
 				System.out.println("");
 			} else if (command.equalsIgnoreCase("help")) {
@@ -146,6 +151,7 @@ public class MMController {
 					System.out.println("Outputting Monster...");
 					search = this.foundMonster(monsterManual.get(command));
 				} else {
+					System.out.println("You entered: " + command);
 					System.out.println("Monster not found. Please enter a valid monster.");
 				}
 

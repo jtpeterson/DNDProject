@@ -69,7 +69,7 @@ public class Monster {
 		this.fortitude = fortitude;
 		this.reflex = reflex;
 		this.will = will;
-		this.name = name;
+		this.name = name.toLowerCase();
 		this.baseAttack = baseAttack;
 		this.grapple = grapple;
 		this.environment = environment;
