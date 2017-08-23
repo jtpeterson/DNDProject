@@ -105,6 +105,40 @@ public class Monster {
 		return builder;
 	}
 
+	public Monster deepCopy() {
+		Monster newMonster = new Monster();
+		newMonster.setSize(this.size);
+		newMonster.setHP(this.hp);
+		newMonster.setAC(this.ac);
+		newMonster.setStr(this.str);
+		newMonster.setDex(this.dex);
+		newMonster.setCon(this.con);
+		newMonster.setInt(this.intelligence);
+		newMonster.setWis(this.wis);
+		newMonster.setCha(this.cha);
+		newMonster.setInitiative(this.initiative);
+		newMonster.setFortitude(this.fortitude);
+		newMonster.setReflex(this.reflex);
+		newMonster.setWill(this.will);
+		newMonster.setName(this.name);
+		newMonster.setBaseAttack(this.baseAttack);
+		newMonster.setGrapple(this.grapple);
+		newMonster.setEnvironment(this.environment);
+		newMonster.setOrganization(this.organization);
+		newMonster.setCR(this.cr);
+		newMonster.setAlignment(this.alignment);
+		newMonster.setSpellLikeAbilities(this.spellLikeAbilities);
+		newMonster.setTreasure(this.treasure);
+		newMonster.setAdvancement(this.advancement);
+		newMonster.setLevelAdjustment(this.adjustment);
+		newMonster.setDescription(this.description);
+		newMonster.setTactics(this.tactics);
+		newMonster.setSpecialAbilities(this.specialAbilities);
+		newMonster.setFeats(this.feats);
+		newMonster.setType(this.type);
+		return newMonster;
+	}
+
 	public String getType() {
 		return type;
 	}
@@ -291,6 +325,10 @@ public class Monster {
 
 	public ArrayList<String> getFeats() {
 		return feats;
+	}
+
+	public void setFeats(ArrayList<String> feats) {
+		this.feats = feats;
 	}
 
 	public String getOrganization() {
