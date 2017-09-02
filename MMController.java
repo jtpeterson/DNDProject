@@ -206,6 +206,7 @@ public class MMController {
 			}
 			else {
 				//TODO
+				System.out.println("Invalid entry.");
 			} 
 		}
 
@@ -267,7 +268,7 @@ public class MMController {
 				System.out.println("return - returns to main menu.");
 				System.out.println("-9-0/1-9 Number of steps up or down for the size category. Size category will not go above 10 or below 1.");
 				System.out.println("");
-			} else {
+			} else if (command.matches("-?[1-9]\\d*|0")) {
 				try {
 					int input = Integer.parseInt(command);
 				} catch(NumberFormatException e) {
@@ -295,6 +296,8 @@ public class MMController {
 				}
 				return true;
 				
+			} else {
+				System.out.println("Invalid entry");
 			}
 
 		}
@@ -302,7 +305,6 @@ public class MMController {
 	}
 
 	public boolean changeWeaponSize(Monster monster, int sizeChange) {
-		int weaponSizeIndex = monster.getSize().getValue() - 1;
 		ArrayList<ArrayList<String>> weaponStepper = new ArrayList<ArrayList<String>>();
 		ArrayList<String> shuriken = new ArrayList<String>();
 		shuriken.add("-");
@@ -403,7 +405,13 @@ public class MMController {
 		greatsword.add("6d6");
 		greatsword.add("8d6");
 		weaponStepper.add(greatsword);
-		//not all weapons have the same step... shit
+		/*int weaponSizeIndex = monster.getSize().getValue() - 1;
+		String weapon = 
+		for(ArrayList<String> weapon: weaponStepper) {
+			if(weapon.get(weaponSizeIndex).equalsIgnoreCase()) {
+
+			}
+		}*/
 		return true;
 	}
 
