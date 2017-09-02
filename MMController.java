@@ -136,8 +136,10 @@ public class MMController {
 				System.out.println("1 - Lists the monsters in the database.");
 				System.out.println("");
 			} else if (command.equalsIgnoreCase("2")) {
-				System.out.println("Printing Monsters by size...");
+				System.out.println("Printing Monsters by Size...");
 				//TODO with a 2D list 
+			} else if (command.equalsIgnoreCase("3")) {
+				System.out.println("Printing out Monsters by Type...");
 			}
 			else {
 				System.out.println("Searching Monsters...");
