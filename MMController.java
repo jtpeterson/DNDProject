@@ -247,6 +247,7 @@ public class MMController {
 		this.setcontrol("Size change");
 		boolean search = true;
 		while(search) { 
+			//still need to implement weapon steps
 			System.out.println("");
 			System.out.println("Enter the number of size categories you would like to increase/decrease.");
 			System.out.println("A negative number will lower the size, a positive number will increase the size.");
@@ -300,6 +301,12 @@ public class MMController {
 
 		}
 		return false;
+	}
+
+	public boolean changeWeaponSize(Monster monster, int sizeChange) {
+		ArrayList<String> weaponStepper = new ArrayList<String>();
+		//not all weapons have the same step... shit
+		return true;
 	}
 
 	public boolean monsterTemplates() {
