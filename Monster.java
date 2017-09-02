@@ -143,7 +143,7 @@ public class Monster {
 		return type;
 	}
 
-	public void setType() {
+	public void setType(String type) {
 		this.type = type;
 	}
 
