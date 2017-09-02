@@ -37,7 +37,7 @@ public class MMController {
 	public MMController(ArrayList<Monster> monsters) {
 		this.monsters = monsters;
 		for (Monster mon: monsters) {
-			monsterManual.add(mon.getName(), mon);
+			monsterManual.put(mon.getName(), mon);
 		}
 	}
 
@@ -51,8 +51,6 @@ public class MMController {
 
 	public void mainInferface() {
 		this.setcontrol("Main");
-		monsterManual.put(beardedDevil.getName(), beardedDevil);
-		monsterList.add(beardedDevil);
 		//System.out.println(monsterManual.toString());
 		System.out.println("Initializing Monster Database...");
 		boolean cont = true;
